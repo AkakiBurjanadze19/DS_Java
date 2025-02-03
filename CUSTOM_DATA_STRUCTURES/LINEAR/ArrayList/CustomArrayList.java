@@ -1,5 +1,7 @@
 package CUSTOM_DATA_STRUCTURES.LINEAR.ArrayList;
 
+import java.util.function.Consumer;
+
 public class CustomArrayList<T> implements CustomList<T> {
     private T[] items;
     private int size;
@@ -40,6 +42,13 @@ public class CustomArrayList<T> implements CustomList<T> {
         }
 
         return clonedItems;
+    }
+
+    @Override
+    public void forEach(Consumer<T> action) {
+        for (int i = 0; i < this.size(); i++) {
+            action.accept(this.items[i]);
+        }
     }
 
     @Override

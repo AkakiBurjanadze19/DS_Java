@@ -22,8 +22,8 @@ public class ArraySet<T> implements Set<T> {
 
     @Override
     public boolean contains(T item) {
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] == item) {
+        for (int i = 0; i < this.size(); i++) {
+            if (items[i].equals(item)) {
                 return true;
             }
         }

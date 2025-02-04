@@ -1,8 +1,8 @@
 package FOP_FINAL.QUEUE.LinkedList;
 
 public class LinkedListNode<T> {
-    T value;
-    LinkedListNode<T> next;
+    private T value;
+    public LinkedListNode<T> next;
 
     public LinkedListNode(T value) {
         this.value = value;

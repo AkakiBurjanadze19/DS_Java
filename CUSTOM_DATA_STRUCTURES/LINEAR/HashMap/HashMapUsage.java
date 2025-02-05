@@ -48,5 +48,9 @@ public class HashMapUsage {
             System.out.println(key);
             System.out.println(persons.get(key));
         }
+
+        persons.clear();
+        System.out.println(persons);
+        System.out.println("map size: " + persons.size());
     }
 }

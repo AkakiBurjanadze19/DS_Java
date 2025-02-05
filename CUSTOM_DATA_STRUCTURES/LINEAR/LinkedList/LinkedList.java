@@ -108,7 +108,7 @@ public class LinkedList<T> {
     */
     public T removeLast() {
         if (this.head == null) {
-            throw new NoSuchElementException("Cannot remove from an empty list!");
+            throw new IllegalStateException("Cannot remove from an empty list!");
         }
 
         LinkedListNode<T> prevTolast = null;
@@ -237,7 +237,7 @@ public class LinkedList<T> {
         Time Complexity: O(n)
         Space Complexity: O(1)
     */
-    public void remove(int index) {
+    public T remove(int index) {
         if (index < 0 || index >= this.size()) {
             throw new IndexOutOfBoundsException("Index out of bounds!");
         }
@@ -259,13 +259,15 @@ public class LinkedList<T> {
             prev.next = current.next;
             this.size--;
         }
+
+        return current.value;
     }
 
     /*
         Time Complexity: O(n)
         Space Complexity: O(1)
     */
-    public void remove(T item) {
+    public T remove(T item) {
         int elementIndex = this.indexOf(item);
 
         if (elementIndex == -1) {
@@ -289,6 +291,8 @@ public class LinkedList<T> {
             prev.next = current.next;
             this.size--;
         }
+
+        return current.value;
     }
 
     /*

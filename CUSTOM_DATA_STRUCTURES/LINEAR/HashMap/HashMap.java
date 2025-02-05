@@ -11,19 +11,26 @@ public class HashMap<K, V> {
         this.size = 0;
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public void put(K key, V value) {
-        if (!this.containsKey(key)) {
-            this.items.add(new Entry(key, value));
-            this.size++;
-        } else {
-            for (Entry entry : this.items) {
-                if (entry.getKey().equals(key)) {
-                    entry.setValue(value);
-                }
+        for (Entry entry : this.items) {
+            if (entry.getKey().equals(key)) {
+                entry.setValue(value);
+                return;
             }
         }
+
+        this.items.add(new Entry(key, value));
+        this.size++;
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public V get(K key) {
         if (this.isEmpty()) {
             throw new IllegalStateException("Map is empty. Element cannot be retrieved!");
@@ -38,6 +45,10 @@ public class HashMap<K, V> {
         return null;
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public boolean containsKey(K key) {
         for (Entry entry : this.items) {
             if (entry.getKey().equals(key)) {
@@ -48,6 +59,10 @@ public class HashMap<K, V> {
         return false;
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public boolean containsValue(V value) {
         for (Entry entry : this.items) {
             if (entry.getValue().equals(value)) {
@@ -58,6 +73,10 @@ public class HashMap<K, V> {
         return false;
     }
 
+    /*
+        Time Complexity: O(n^2)
+        Space Complexity: O(1)
+    */
     public boolean remove(K key) {
         if (this.isEmpty()) {
             throw new IllegalStateException("Map is empty. Element cannot be removed!");
@@ -75,6 +94,10 @@ public class HashMap<K, V> {
         return false;
     }
 
+    /*
+        Time Complexity: O(n^2)
+        Space Complexity: O(1)
+    */
     public boolean remove(K key, V value) {
         if (this.isEmpty()) {
             throw new IllegalStateException("Map is empty. Element cannot be removed!");
@@ -92,6 +115,10 @@ public class HashMap<K, V> {
         return false;
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public boolean replace(K key, V oldValue, V newValue) {
         for (Entry entry : this.items) {
             if (entry.getKey().equals(key) && entry.getValue().equals(oldValue)) {
@@ -103,6 +130,10 @@ public class HashMap<K, V> {
         return false;
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public List<V> values() {
         List<V> valuesList = new ArrayList<>();
 
@@ -113,6 +144,10 @@ public class HashMap<K, V> {
         return Collections.unmodifiableList(valuesList);
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public Set<K> keySet() {
         Set<K> keys = new HashSet<>();
 
@@ -123,6 +158,10 @@ public class HashMap<K, V> {
         return Collections.unmodifiableSet(keys);
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public void clear() {
         Iterator<Entry> iterator = this.items.iterator();
 
@@ -134,14 +173,26 @@ public class HashMap<K, V> {
         this.size = 0;
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public int size() {
         return this.size;
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public boolean isEmpty() {
         return this.size() == 0;
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+    */
     public String toString() {
         StringBuilder output = new StringBuilder();
 

@@ -10,8 +10,14 @@ public class LinkedList<T> {
 
     public void addFirst(T item) {
         LinkedListNode<T> newNode = new LinkedListNode<>(item);
-        newNode.next = this.head;
-        this.head = newNode;
+
+        if (this.head == null) {
+            this.head = new LinkedListNode<>(item);
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+
         this.size++;
     }
 

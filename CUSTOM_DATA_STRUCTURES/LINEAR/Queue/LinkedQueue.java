@@ -12,6 +12,10 @@ public class LinkedQueue<T> implements Queue<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public void enqueue(T item) {
         if (this.size() == this.capacity) {
             throw new IllegalStateException("Queue is full. New elements cannot be added!");
@@ -21,6 +25,10 @@ public class LinkedQueue<T> implements Queue<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public T dequeue() {
         if (this.isEmpty()) {
             throw new IllegalStateException("Queue is empty! Cannot remove from an empty queue!");
@@ -30,6 +38,10 @@ public class LinkedQueue<T> implements Queue<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public T peek() {
         if (this.isEmpty()) {
             throw new IllegalStateException("Queue is empty! Cannot retrieve an element!");
@@ -39,11 +51,19 @@ public class LinkedQueue<T> implements Queue<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public int size() {
         return this.items.size();
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public boolean isEmpty() {
         return this.items.isEmpty();
     }

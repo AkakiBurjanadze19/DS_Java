@@ -104,7 +104,7 @@ public class HashMap<K, V> {
             valuesList.add((V) entry.getValue());
         }
 
-        return valuesList;
+        return Collections.unmodifiableList(valuesList);
     }
 
     public Set<K> keySet() {
@@ -115,6 +115,17 @@ public class HashMap<K, V> {
         }
 
         return Collections.unmodifiableSet(keys);
+    }
+
+    public void clear() {
+        Iterator<Entry> iterator = this.items.iterator();
+
+        while (iterator.hasNext()) {
+            iterator.next();
+            iterator.remove();
+        }
+
+        this.size = 0;
     }
 
     public int size() {

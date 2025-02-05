@@ -10,6 +10,10 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public void push(T item) {
         if (this.size() == this.items.length) {
             throw new IllegalStateException("Stack is full. New elements cannot be added.");
@@ -19,6 +23,10 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public T pop() {
         if (this.isEmpty()) {
             throw new IllegalStateException("Stack is empty. Elements cannot be removed!");
@@ -31,6 +39,10 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public T peek() {
         if (this.isEmpty()) {
             throw new IllegalStateException("Stack is empty. An element cannot be retrieved!");
@@ -41,6 +53,10 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public int search(T item) {
         for (int i = 0; i < this.size(); i++) {
             if (this.items[i].equals(item)) {
@@ -52,11 +68,19 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public int size() {
         return this.size;
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public boolean isEmpty() {
         return this.size() == 0;
     }

@@ -15,6 +15,12 @@ public class HashMap<K, V> {
         if (!this.containsKey(key)) {
             this.items.add(new Entry(key, value));
             this.size++;
+        } else {
+            for (Entry entry : this.items) {
+                if (entry.getKey().equals(key)) {
+                    entry.setValue(value);
+                }
+            }
         }
     }
 

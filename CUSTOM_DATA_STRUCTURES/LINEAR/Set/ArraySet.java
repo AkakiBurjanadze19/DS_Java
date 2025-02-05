@@ -10,6 +10,10 @@ public class ArraySet<T> implements Set<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public void add(T item) {
         if (this.size() == this.items.length) {
             throw new IllegalStateException("ArraySet is full! New elements cannot be added!");
@@ -21,6 +25,10 @@ public class ArraySet<T> implements Set<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public T remove(T item) {
         if (this.isEmpty()) {
             throw new IllegalStateException("ArraySet is empty! Elements cannot be removed!");
@@ -34,6 +42,7 @@ public class ArraySet<T> implements Set<T> {
         }
 
         T removedItem = this.items[elementIndex];
+        this.items[elementIndex] = null;
 
         for (int i = elementIndex; i < this.size() - 1; i++) {
             this.items[i] = this.items[i + 1];
@@ -44,6 +53,10 @@ public class ArraySet<T> implements Set<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public boolean contains(T item) {
         for (int i = 0; i < this.size(); i++) {
             if (this.items[i].equals(item)) {
@@ -55,6 +68,10 @@ public class ArraySet<T> implements Set<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+    */
     public ArraySet<T> cloneSet() {
         ArraySet<T> items = new ArraySet<>(this.items.length);
 
@@ -66,6 +83,10 @@ public class ArraySet<T> implements Set<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(1)
+    */
     public void clear() {
         for (int i = 0; i < this.size(); i++) {
             this.items[i] = null;
@@ -75,11 +96,19 @@ public class ArraySet<T> implements Set<T> {
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public int size() {
         return this.size;
     }
 
     @Override
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public boolean isEmpty() {
         return this.size() == 0;
     }

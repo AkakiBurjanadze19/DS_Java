@@ -11,12 +11,19 @@ public class MinHeap {
     }
 
     /* Adds the value to the end of the list, then bubbles it up. */
+    /*
+        Time Complexity: O(log n)
+        Space Complexity: O(1)
+    */
     public void insert(int value) {
         this.heap.add(value);
         this.bubbleUp(this.size() - 1);
     }
 
-    /* Removes and returns the minimum (root), replaces it with the last element, then bubbles down */
+    /* Removes and returns the minimum (root), replaces it with the last element, then bubbles down.
+        Time Complexity: O(log n)
+        Space Complexity: O(1)
+    */
     public int extractMin() {
         if (this.isEmpty()) {
             throw new IllegalStateException("Heap is empty!");
@@ -34,6 +41,10 @@ public class MinHeap {
     }
 
     /* Returns the root element without removing it */
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public int getMin() {
         if (this.isEmpty()) {
             throw new IllegalStateException("Heap is empty!");
@@ -43,16 +54,28 @@ public class MinHeap {
     }
 
     /* Check if the heap is empty */
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public boolean isEmpty() {
         return this.heap.isEmpty();
     }
 
     /* Returns the number of elements */
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public int size() {
         return this.heap.size();
     }
 
     /* Compares the element at index with its parent and swaps if necessary, recursively. */
+    /*
+        Time Complexity: O(log n)
+        Space Complexity: O(1)
+    */
     private void bubbleUp(int index) {
         while (index > 0) {
             int parentIndex = (index - 1) / 2;
@@ -68,6 +91,10 @@ public class MinHeap {
         }
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     private void swap(int i, int j) {
         int temp = this.heap.get(i);
         this.heap.set(i, this.heap.get(j));
@@ -75,6 +102,10 @@ public class MinHeap {
     }
 
     /* Compares the element with its children, swaps with the smallest child if necessary, and continues down. */
+    /*
+        Time Complexity: O(log n)
+        Space Complexity: O(1)
+    */
     private void bubbleDown(int index) {
         int size = this.size();
         while (true) {

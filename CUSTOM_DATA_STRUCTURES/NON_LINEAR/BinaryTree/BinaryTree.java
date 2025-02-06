@@ -7,6 +7,10 @@ public class BinaryTree {
     public BinaryTreeNode root;
 
     /* Insert a node using a level-order traversal (left to right) */
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+    */
     public void insert(int data) {
         BinaryTreeNode newNode = new BinaryTreeNode(data);
 
@@ -39,6 +43,10 @@ public class BinaryTree {
     }
 
     /* left->root->right */
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(h)
+    */
     public void inOrder(BinaryTreeNode node) {
         if (node != null) {
             inOrder(node.left);
@@ -48,6 +56,10 @@ public class BinaryTree {
     }
 
     /* root->left->right */
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(h)
+    */
     public void preOrder(BinaryTreeNode node) {
         if (node != null) {
             System.out.println("data: " + node.data);
@@ -57,6 +69,10 @@ public class BinaryTree {
     }
 
     /* left->right->root */
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(h)
+    */
     public void postOrder(BinaryTreeNode node) {
         if (node != null) {
             postOrder(node.left);

@@ -10,11 +10,19 @@ public class PriorityQueue {
         this.heap = new ArrayList<>();
     }
 
+    /*
+        Time Complexity: O(log n)
+        Space Complexity: O(1)
+    */
     public void offer(String value, int priority) {
         this.heap.add(new PriorityQueueNode(value, priority));
         this.bubbleUp(this.size() - 1);
     }
 
+    /*
+        Time Complexity: O(log n)
+        Space Complexity: O(1)
+    */
     public String poll() {
         if (this.isEmpty()) {
             throw new IllegalStateException("PriorityQueue is empty!");
@@ -31,6 +39,10 @@ public class PriorityQueue {
         return minElement.getValue();
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public String peek() {
         if (this.isEmpty()) {
             throw new IllegalStateException("PriorityQueue is empty!");
@@ -39,14 +51,26 @@ public class PriorityQueue {
         return this.heap.get(0).getValue();
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public int size() {
         return this.heap.size();
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public boolean isEmpty() {
         return this.heap.isEmpty();
     }
 
+    /*
+        Time Complexity: O(log n)
+        Space Complexity: O(1)
+    */
     private void bubbleUp(int index) {
         while (index > 0) {
             int parentElementIndex = (index - 1) / 2;
@@ -62,12 +86,20 @@ public class PriorityQueue {
         }
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     private void swap(int i, int j) {
         PriorityQueueNode temp = this.heap.get(i);
         this.heap.set(i, this.heap.get(j));
         this.heap.set(j, temp);
     }
 
+    /*
+        Time Complexity: O(log n)
+        Space Complexity: O(1)
+    */
     private void bubbleDown(int index) {
         int size = this.size();
         while (true) {

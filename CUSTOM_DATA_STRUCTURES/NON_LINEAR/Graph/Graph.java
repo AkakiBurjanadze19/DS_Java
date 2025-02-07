@@ -21,6 +21,10 @@ public class Graph {
         }
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public void addEdge(int source, int destination) {
         this.validateVertex(source);
         this.validateVertex(destination);
@@ -33,6 +37,10 @@ public class Graph {
         }
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public boolean hasEdge(int source, int destination) {
         this.validateVertex(source);
         this.validateVertex(destination);
@@ -40,6 +48,10 @@ public class Graph {
         return this.adjacencyList.get(source).contains(destination);
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public void removeEdge(int source, int destination) {
         this.validateVertex(source);
         this.validateVertex(destination);
@@ -53,18 +65,30 @@ public class Graph {
     }
 
     /* Get all neighbors of a vertex */
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     public Set<Integer> getNeighbors(int vertex) {
         this.validateVertex(vertex);
 
         return this.adjacencyList.get(vertex);
     }
 
+    /*
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+    */
     private void validateVertex(int vertex) {
         if (vertex < 0 || vertex >= this.numVertices) {
             throw new IllegalArgumentException("Invalid vertex: " + vertex);
         }
     }
 
+    /*
+        Time Complexity: O(V + E)
+        Space Complexity: O(V)
+    */
     public void bfs(int startVertex) {
         this.validateVertex(startVertex);
 
@@ -87,6 +111,10 @@ public class Graph {
         System.out.println();
     }
 
+    /*
+        Time Complexity: O(V + E)
+        Space Complexity: O(V)
+    */
     public void dfs(int startVertex) {
         this.validateVertex(startVertex);
         boolean[] visited = new boolean[this.numVertices];
@@ -94,6 +122,10 @@ public class Graph {
         System.out.println();
     }
 
+    /*
+        Time Complexity: O(V + E)
+        Space Complexity: O(V)
+    */
     private void dfsUTIL(int vertex, boolean[] visited) {
         visited[vertex] = true;
         System.out.print(vertex + " ");
@@ -105,6 +137,10 @@ public class Graph {
         }
     }
 
+    /*
+        Time Complexity: O(V + E)
+        Space Complexity: O(1)
+    */
     public void printGraph() {
         for (int i = 0; i < this.numVertices; i++) {
             System.out.print(i + ": ");

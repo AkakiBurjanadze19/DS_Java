@@ -3,10 +3,18 @@ package CUSTOM_DATA_STRUCTURES.NON_LINEAR.BinarySearchTree;
 public class BinarySearchTree {
     private BinarySearchTreeNode root;
 
+    /*
+        Time Complexity: O(h)
+        Space Complexity: O(h)
+    */
     public void insert(int data) {
         this.root = this.insertRec(this.root, data);
     }
 
+    /*
+        Time Complexity: O(h)
+        Space Complexity: O(h)
+    */
     private BinarySearchTreeNode insertRec(BinarySearchTreeNode root, int data) {
         if (root == null) {
             return new BinarySearchTreeNode(data);
@@ -21,10 +29,18 @@ public class BinarySearchTree {
         return root;
     }
 
+    /*
+        Time Complexity: O(h)
+        Space Complexity: O(h)
+    */
     public void delete(int data) {
         this.root = this.deleteRec(this.root, data);
     }
 
+    /*
+        Time Complexity: O(h)
+        Space Complexity: O(h)
+    */
     private BinarySearchTreeNode deleteRec(BinarySearchTreeNode root, int data) {
         if (root == null) return null;
 
@@ -44,6 +60,10 @@ public class BinarySearchTree {
         return root;
     }
 
+    /*
+        Time Complexity: O(h)
+        Space Complexity: O(1)
+    */
     private int minValue(BinarySearchTreeNode root) {
         int min = root.data;
         while (root.left != null) {
@@ -54,21 +74,37 @@ public class BinarySearchTree {
         return min;
     }
 
+    /*
+        Time Complexity: O(h)
+        Space Complexity: O(h)
+    */
     public boolean search(int data) {
         return this.searchRec(this.root, data);
     }
 
+    /*
+        Time Complexity: O(h)
+        Space Complexity: O(h)
+    */
     private boolean searchRec(BinarySearchTreeNode root, int data) {
         if (root == null) return false;
         if (root.data == data) return true;
         return (data < root.data) ? this.searchRec(root.left, data) : this.searchRec(root.right, data);
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(h)
+    */
     public void inOrder() {
         this.inOrderRec(this.root);
     }
 
     /* left->root->right */
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(h)
+    */
     private void inOrderRec(BinarySearchTreeNode root) {
         if (root != null) {
             this.inOrderRec(root.left);
@@ -77,11 +113,19 @@ public class BinarySearchTree {
         }
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(h)
+    */
     public void preOrder() {
         this.preOrderRec(this.root);
     }
 
     /* root->left->right */
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(h)
+    */
     private void preOrderRec(BinarySearchTreeNode root) {
         if (root != null) {
             System.out.println("data: " + root.data);
@@ -90,11 +134,19 @@ public class BinarySearchTree {
         }
     }
 
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(h)
+    */
     public void postOrder() {
         this.postOrderRec(this.root);
     }
 
     /* left->right->root */
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(h)
+    */
     private void postOrderRec(BinarySearchTreeNode root) {
         if (root != null) {
             this.postOrderRec(root.left);

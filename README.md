@@ -6,7 +6,7 @@ I implemented some of the most common data structures in Java for learning purpo
 ### Data Structures
 * ArrayList (dynamic array)
 * LinkedList (one-directional)
-* Stack
+* Stack (using static array)
 * Queue (using one-directional linked list)
 * Set (using static array)
 * HashMap (using ArrayList which contains entries of key-value pairs)
